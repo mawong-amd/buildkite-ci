@@ -364,6 +364,9 @@ plugins:
         soft_fail: false
         {% else %}
         soft_fail: true
-        {% endif%}
+        {% endif %}
+        {% if step.parallelism %}
+        parallelism: {{ step.parallelism }}
+        {% endif %}
     {% endif %}
     {% endfor %}
